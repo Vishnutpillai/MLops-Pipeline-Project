@@ -52,7 +52,7 @@ def separate_features_and_target(train_df, val_df, test_df):
 
 def build_preprocessor(X_train):
     numerical_columns   = X_train.select_dtypes(include=["int64", "float64"]).columns.tolist()
-    categorical_columns = X_train.select_dtypes(include=["object"]).columns.tolist()
+    categorical_columns = X_train.select_dtypes(include=["object","string"]).columns.tolist()
 
     # Drop constant numeric columns (zero variance)
     constant_cols = [col for col in numerical_columns if X_train[col].nunique() <= 1]
