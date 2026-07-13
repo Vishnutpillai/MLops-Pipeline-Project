@@ -5,3 +5,4 @@ boto3
 pyyaml
 dvc
 boto3
+joblib
