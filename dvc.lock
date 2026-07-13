@@ -1,0 +1,86 @@
+schema: '2.0'
+stages:
+  ingestion:
+    cmd: python src/ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    - path: src/ingestion.py
+      hash: md5
+      md5: 66d0b5e3c2267c0d55998e0df38c1e32
+      size: 625
+    outs:
+    - path: data/raw/medical_insurance.csv
+      hash: md5
+      md5: 9ff71806bdbac0a9590f391e3fb956ac
+      size: 22070144
+  data_engineering:
+    cmd: python src/data_engineering.py
+    deps:
+    - path: data/raw/medical_insurance.csv
+      hash: md5
+      md5: 9ff71806bdbac0a9590f391e3fb956ac
+      size: 22070144
+    - path: src/data_engineering.py
+      hash: md5
+      md5: f59e19af62c03487642625ae6ec1d347
+      size: 2446
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 34f66da8c5e8499ae4ab8ad4cb619a54
+      size: 3324584
+    - path: data/processed/train.csv
+      hash: md5
+      md5: c59698e68832d081d2067a2cab00e8ab
+      size: 16009933
+    - path: data/processed/val.csv
+      hash: md5
+      md5: 05ae2d19e4b9814ce89f1cfa18438b6d
+      size: 2827344
+  feature_engineering:
+    cmd: python src/feature_engineering.py
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 34f66da8c5e8499ae4ab8ad4cb619a54
+      size: 3324584
+    - path: data/processed/train.csv
+      hash: md5
+      md5: c59698e68832d081d2067a2cab00e8ab
+      size: 16009933
+    - path: data/processed/val.csv
+      hash: md5
+      md5: 05ae2d19e4b9814ce89f1cfa18438b6d
+      size: 2827344
+    - path: src/feature_engineering.py
+      hash: md5
+      md5: 27ae60d66a41b11ceaa54c795f69d564
+      size: 5306
+    outs:
+    - path: data/feature/X_test.csv
+      hash: md5
+      md5: 6789e19da47f6ca2b8bf31de764f26fc
+      size: 13432117
+    - path: data/feature/X_train.csv
+      hash: md5
+      md5: 50daa73d668dd4aae39382bbad4973ee
+      size: 64700148
+    - path: data/feature/X_val.csv
+      hash: md5
+      md5: 42ac2a1526607dd42aa8eb30630d867c
+      size: 11417799
+    - path: data/feature/y_test.csv
+      hash: md5
+      md5: 18993841e27d5655d5ccb6e8f1858069
+      size: 131164
+    - path: data/feature/y_train.csv
+      hash: md5
+      md5: b064c4f4224bd8b1a73aa77f009db1e6
+      size: 631605
+    - path: data/feature/y_val.csv
+      hash: md5
+      md5: 81933b2886d2afdbea1713da9d30fb88
+      size: 111417
