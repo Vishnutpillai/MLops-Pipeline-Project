@@ -84,3 +84,23 @@ stages:
       hash: md5
       md5: 81933b2886d2afdbea1713da9d30fb88
       size: 111417
+  create_feature_store:
+    cmd: python src/create_feature_store_data.py
+    deps:
+    - path: data/feature/X_train.csv
+      hash: md5
+      md5: 50daa73d668dd4aae39382bbad4973ee
+      size: 64700148
+    - path: data/processed/train.csv
+      hash: md5
+      md5: c59698e68832d081d2067a2cab00e8ab
+      size: 16009933
+    - path: src/create_feature_store_data.py
+      hash: md5
+      md5: 7a22a266f98f4177464b3d9e25b9f117
+      size: 798
+    outs:
+    - path: data/features_store/train_features.csv
+      hash: md5
+      md5: eddff04eb698b50adb39cfed80c71881
+      size: 66071210
