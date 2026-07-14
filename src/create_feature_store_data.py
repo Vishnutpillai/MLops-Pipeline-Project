@@ -1,30 +1,48 @@
 import os
 import pandas as pd
 
+# Input files
 PROCESSED_PATH = "data/processed/train.csv"
 FEATURE_PATH = "data/feature/X_train.csv"
-OUTPUT_DIR = "data/features_store"
-OUTPUT_FILE = "train_features.csv"
 
+# Output directory
+OUTPUT_DIR = "data/features_store"
+CSV_FILE = "train_features.csv"
+PARQUET_FILE = "train_features.parquet"
+
+# Create output directory
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-processed_df=pd.read_csv(PROCESSED_PATH)
-feature_df=pd.read_csv(FEATURE_PATH)
-print("Processed shape:", processed_df.shape)
-print("Feature shape:", feature_df.shape)
+# Read input files
+processed_df = pd.read_csv(PROCESSED_PATH)
+feature_df = pd.read_csv(FEATURE_PATH)
 
-person = processed_df[["person_id"]]
+print("Processed shape :", processed_df.shape)
+print("Feature shape   :", feature_df.shape)
 
-feature_store_df = pd.concat([person, feature_df], axis=1)
+# Create feature store dataframe
+feature_store_df = pd.concat(
+    [processed_df[["person_id"]], feature_df],
+    axis=1
+)
 
-#add current timestamp
+# Add event timestamp
 feature_store_df["event_timestamp"] = pd.Timestamp.now()
 
-#save
+# Save CSV
+csv_path = os.path.join(OUTPUT_DIR, CSV_FILE)
+feature_store_df.to_csv(csv_path, index=False)
 
-output_path = os.path.join(OUTPUT_DIR, OUTPUT_FILE)
-feature_store_df.to_csv(output_path, index=False)
+# Save Parquet
+parquet_path = os.path.join(OUTPUT_DIR, PARQUET_FILE)
+feature_store_df.to_parquet(parquet_path, index=False)
 
-print("Feature Store Dataset Created Successfully")
+print("\nFeature Store Dataset Created Successfully!")
+print(f"CSV      : {csv_path}")
+print(f"Parquet  : {parquet_path}")
 
-print(feature_store_df.head(10))
+print("\nColumns:")
+print(feature_store_df.columns.tolist())
+
+print("\nPreview:")
+print(feature_store_df.head())
