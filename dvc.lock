@@ -97,10 +97,14 @@ stages:
       size: 16009933
     - path: src/create_feature_store_data.py
       hash: md5
-      md5: 7a22a266f98f4177464b3d9e25b9f117
-      size: 798
+      md5: cd70ade7f0e447dac0f2f0fee347a99e
+      size: 1237
     outs:
     - path: data/features_store/train_features.csv
       hash: md5
-      md5: eddff04eb698b50adb39cfed80c71881
+      md5: a71f3af3dba792ef52579a23ec343be3
       size: 66071210
+    - path: data/features_store/train_features.parquet
+      hash: md5
+      md5: 302edd007e927dac9dafd236be3d8a2c
+      size: 2171260
