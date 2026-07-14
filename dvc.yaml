@@ -29,3 +29,11 @@ stages:
     - data/feature/y_train.csv
     - data/feature/y_test.csv
     - data/feature/y_val.csv
+  create_feature_store:
+    cmd: python src/create_feature_store_data.py
+    deps:
+    - src/create_feature_store_data.py
+    - data/processed/train.csv
+    - data/feature/X_train.csv
+    outs:
+    - data/features_store/train_features.csv
