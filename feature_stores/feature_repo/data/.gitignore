@@ -1,0 +1,6 @@
+# Feast generated files
+*.db
+
+# Feast sample parquet files
+driver_quality_labels.parquet
+driver_stats.parquet
