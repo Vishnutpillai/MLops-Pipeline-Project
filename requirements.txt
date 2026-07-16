@@ -7,3 +7,4 @@ dvc
 boto3
 joblib
 feast
+xgboost
