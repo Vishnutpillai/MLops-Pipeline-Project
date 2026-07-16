@@ -38,3 +38,19 @@ stages:
     outs:
     - data/features_store/train_features.csv
     - data/features_store/train_features.parquet
+  train_model:
+    cmd: python src/trained_model.py
+    deps:
+    - src/trained_model.py
+    - data/feature/X_train.csv
+    - data/feature/y_train.csv  
+    - data/feature/X_test.csv
+    - data/feature/y_test.csv
+    - data/feature/X_val.csv
+    - data/feature/y_val.csv
+    - model/preprocessing.pkl
+    outs:
+    - model/best_model.pkl
+    metrics:
+    - model/evaluation/metrics.json
+    params: []
