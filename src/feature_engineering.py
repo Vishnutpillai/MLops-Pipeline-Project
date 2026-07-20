@@ -20,8 +20,7 @@ TARGET_COLUMN = "annual_medical_cost"
 
 # Drop IDs and columns not useful for prediction
 DROP_COLUMNS = [
-    "person_id", "annual_premium", "monthly_premium",
-    "claims_count", "avg_claim_amount", "total_claims_paid"
+    "person_id","claims_count"
 ]
 
 # ==========================================================
