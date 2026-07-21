@@ -22,3 +22,11 @@ data/feature/*
 # Models
 model/*
 !model/.gitignore
+
+# mlflow
+mlruns/
+_pycache_/
+catboost_info/
+*.pyc
+mlflow.db
+mlartifacts/

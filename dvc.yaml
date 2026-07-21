@@ -54,3 +54,10 @@ stages:
     metrics:
     - model/evaluation/metrics.json
     params: []
+  register_model:
+    cmd: python src/register_model.py
+    deps:
+      - src/register_model.py
+      - model/best_model.pkl
+      - model/evaluation/metrics.json
+      - model/evaluation/best_params.json

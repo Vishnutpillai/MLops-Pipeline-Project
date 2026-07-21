@@ -9,3 +9,6 @@ joblib
 feast
 xgboost
 catboost
+mlflow
+cloudpickle
+psutil
