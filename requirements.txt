@@ -12,3 +12,6 @@ catboost
 mlflow
 cloudpickle
 psutil
+fastapi 
+uvicorn
+pydantic
