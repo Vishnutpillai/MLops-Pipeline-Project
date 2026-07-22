@@ -152,3 +152,22 @@ stages:
       hash: md5
       md5: 2b024cc2e47f70468a7c7cc45ba62e15
       size: 403
+  register_model:
+    cmd: python src/register_model.py
+    deps:
+    - path: model/best_model.pkl
+      hash: md5
+      md5: de4c38e2a3492ade11707d85da2aafb4
+      size: 336812
+    - path: model/evaluation/best_params.json
+      hash: md5
+      md5: 8638a70777b9d008b29eccc40fb73236
+      size: 172
+    - path: model/evaluation/metrics.json
+      hash: md5
+      md5: 2b024cc2e47f70468a7c7cc45ba62e15
+      size: 403
+    - path: src/register_model.py
+      hash: md5
+      md5: 2700ff1929e8a3fd4b0e7fd033e23d7e
+      size: 1511
