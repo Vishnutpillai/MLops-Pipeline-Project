@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.git/
+.dvc/
+venv/
+insurance311/
+mlruns/
