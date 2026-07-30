@@ -30,3 +30,7 @@ catboost_info/
 *.pyc
 mlflow.db
 mlartifacts/
+monitoring/logs/
+monitoring/reports/
+__pycache__/
+*.pyc
