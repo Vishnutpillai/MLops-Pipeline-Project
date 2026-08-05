@@ -20,15 +20,11 @@
 ## 👥 Project Team
 
   ----------------------------------------------------------------------------------------------------------
-  Member                LinkedIn                                          GitHub
-  --------------------- ------------------------------------------------- ----------------------------------
-  **Vishnu T Pillai**   https://www.linkedin.com/in/vishnu-t-pillai       https://github.com/Vishnutpillai
-
-  **Sreyas**            https://www.linkedin.com/in/sreyas-s-582b61364/   https://github.com/Sreyas2255
-
-  **Harani**            https://www.linkedin.com/in/harani-s/             https://github.com/Harani-S1
-  ----------------------------------------------------------------------------------------------------------
-
+| Member | LinkedIn | GitHub |
+|---------|----------|--------|
+| Vishnu T Pillai | [LinkedIn](https://www.linkedin.com/in/vishnu-t-pillai) | [GitHub](https://github.com/Vishnutpillai) |
+| Sreyas | [LinkedIn](https://www.linkedin.com/in/sreyas-s-582b61364/) | [GitHub](https://github.com/Sreyas2255) |
+| Harani | [LinkedIn](https://www.linkedin.com/in/harani-s/) | [GitHub](https://github.com/Harani-S1) |
 ------------------------------------------------------------------------
 
 ## 📌 Project Overview
