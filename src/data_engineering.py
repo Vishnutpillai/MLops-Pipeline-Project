@@ -26,9 +26,10 @@ def process_data(df):
 
         # Fill missing values
         for col in numerical_cols:
-            df[col] = df[col].fillna(df[col].median(), inplace=True) 
+            df[col] = df[col].fillna(df[col].median())
+
         for col in categorical_cols:
-            df[col] = df[col].fillna("unknown", inplace=True)   
+            df[col] = df[col].fillna("unknown")
 
         print(f"\nMissing values after cleaning:: {df.isnull().sum().sum()}")
     
