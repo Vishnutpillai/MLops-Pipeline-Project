@@ -1,4 +1,12 @@
 # 🚀 Production-Grade Insurance Cost Prediction MLOps Pipeline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Production-Grade End-to-End
+Insurance Cost Prediction MLOps Pipeline
+
+From Data Ingestion → Deployment → Monitoring
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi)
