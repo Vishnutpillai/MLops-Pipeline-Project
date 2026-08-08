@@ -148,6 +148,10 @@ stages:
       hash: md5
       md5: e3eb4bc0ce2d39988533f49826054149
       size: 822187
+    - path: model/evaluation/best_params.json
+      hash: md5
+      md5: 3ba0e79c0524064445c93ea49b76d727
+      size: 233
     - path: model/evaluation/metrics.json
       hash: md5
       md5: 61a60d4bc856c2e3027a042644104741
