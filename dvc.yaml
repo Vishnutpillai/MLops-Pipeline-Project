@@ -2,52 +2,48 @@ stages:
   ingestion:
     cmd: python src/ingestion.py
     deps:
-      - config/config.yaml
-      - src/ingestion.py
+    - config/config.yaml
+    - src/ingestion.py
     outs:
-      - data/raw/medical_insurance.csv
-
+    - data/raw/medical_insurance.csv
   data_engineering:
     cmd: python src/data_engineering.py
     deps:
-      - data/raw/medical_insurance.csv
-      - src/data_engineering.py
+    - data/raw/medical_insurance.csv
+    - src/data_engineering.py
     outs:
-      - data/processed/train.csv
-      - data/processed/test.csv
-      - data/processed/val.csv
-
+    - data/processed/train.csv
+    - data/processed/test.csv
+    - data/processed/val.csv
   feature_engineering:
     cmd: python src/feature_engineering.py
     deps:
-      - data/processed/train.csv
-      - data/processed/test.csv
-      - data/processed/val.csv
-      - src/feature_engineering.py
+    - data/processed/train.csv
+    - data/processed/test.csv
+    - data/processed/val.csv
+    - src/feature_engineering.py
     outs:
-      - data/feature/X_train.csv
-      - data/feature/X_test.csv
-      - data/feature/X_val.csv
-      - data/feature/y_train.csv
-      - data/feature/y_test.csv
-      - data/feature/y_val.csv
-
+    - data/feature/X_train.csv
+    - data/feature/X_test.csv
+    - data/feature/X_val.csv
+    - data/feature/y_train.csv
+    - data/feature/y_test.csv
+    - data/feature/y_val.csv
   create_feature_store:
     cmd: python src/create_feature_store_data.py
     deps:
-      - src/create_feature_store_data.py
-      - data/processed/train.csv
-      - data/feature/X_train.csv
+    - src/create_feature_store_data.py
+    - data/processed/train.csv
+    - data/feature/X_train.csv
     outs:
-      - data/features_store/train_features.csv
-      - data/features_store/train_features.parquet
-
+    - data/features_store/train_features.csv
+    - data/features_store/train_features.parquet
   train_model:
     cmd: python src/trained_model.py
     deps:
     - src/trained_model.py
     - data/feature/X_train.csv
-    - data/feature/y_train.csv
+    - data/feature/y_train.csv  
     - data/feature/X_test.csv
     - data/feature/y_test.csv
     - data/feature/X_val.csv
@@ -55,11 +51,9 @@ stages:
     - model/preprocessing.pkl
     outs:
     - model/best_model.pkl
-    - model/evaluation/best_params.json
     metrics:
     - model/evaluation/metrics.json
     params: []
-    
   register_model:
     cmd: python src/register_model.py
     deps:

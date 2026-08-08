@@ -20,11 +20,8 @@ data/feature/*
 !data/feature/.gitignore
 
 # Models
-# Keep trained model artifacts in Git for deployment
-
-# DVC cache
-.dvc/cache/
-
+model/*
+!model/.gitignore
 
 # mlflow
 mlruns/
@@ -38,4 +35,4 @@ monitoring/reports/
 __pycache__/
 *.pyc
 
-.pytest_cache/
+ .pytest_cache/
