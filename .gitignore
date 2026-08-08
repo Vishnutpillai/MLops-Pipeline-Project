@@ -22,6 +22,10 @@ data/feature/*
 # Models
 # Keep trained model artifacts in Git for deployment
 
+# DVC cache
+.dvc/cache/
+
+
 # mlflow
 mlruns/
 _pycache_/

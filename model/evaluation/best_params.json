@@ -1,0 +1,11 @@
+{
+    "best_model": "XGBoost",
+    "best_params": {
+        "subsample": 0.8,
+        "n_estimators": 700,
+        "max_depth": 3,
+        "learning_rate": 0.01,
+        "gamma": 0.2,
+        "colsample_bytree": 0.8
+    }
+}
